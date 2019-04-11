@@ -13,7 +13,7 @@ namespace ProgrammingChallenges
         /// Time Complexity: 
         ///      Worst Case --> O(N) Where N is the number of characters in the string
         ///      Best Case --> O(1) If the sentence starts with a closed bracket ')'
-        /// Space Complexity: O(1) The space is fixed: 1 char variable, 1 int variable
+        /// Space Complexity: O(1) The space is fixed: 2 char variables, 1 int variable
         /// </summary>
         /// <param name="stringToValidate"></param>
         /// <param name="openBracketCharacter"></param>

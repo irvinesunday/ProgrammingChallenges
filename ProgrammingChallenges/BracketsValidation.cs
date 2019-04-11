@@ -30,6 +30,7 @@ namespace ProgrammingChallenges
                 throw new ArgumentNullException("Bracket character values cannot be empty");
 
             char firstBracketFound = '\0';
+            char lastBracketFound = '\0';
             int bracketsCounter = 0;
 
             for (int i = 0; i < stringToValidate.Length; i++)
@@ -40,6 +41,7 @@ namespace ProgrammingChallenges
                         firstBracketFound = openBracketCharacter;
 
                     bracketsCounter += 1;
+                    lastBracketFound = openBracketCharacter;
                 }
                 else if (stringToValidate[i] == closedBracketCharacter)
                 {
@@ -47,10 +49,12 @@ namespace ProgrammingChallenges
                         return false; // First bracket in string must be an open bracket
 
                     bracketsCounter -= 1;
+                    lastBracketFound = closedBracketCharacter;
                 }
             }
 
-            if (bracketsCounter == 0)
+            if (bracketsCounter == 0 &&
+                lastBracketFound == '\0' || lastBracketFound == closedBracketCharacter)
                 return true;
 
             return false;

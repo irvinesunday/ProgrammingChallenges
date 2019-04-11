@@ -60,5 +60,15 @@ namespace ProgrammingChallengeTests
 
             Assert.IsFalse(result);
         }
+        [TestMethod]
+        public void StringWithOneSetMismatchedBrackets()
+        {
+            string sentence = "())(";
+
+            bool result = BracketsValidation.IsStringValid(sentence, '(', ')');
+
+            Assert.IsFalse(result);
+        }
+
     }
 }
